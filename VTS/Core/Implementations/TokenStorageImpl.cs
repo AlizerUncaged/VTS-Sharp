@@ -20,7 +20,10 @@ namespace VTS.Core {
 			return null;
 		}
 
-		public void SaveToken(string token) {
+		public void SaveToken(string token)
+		{
+			
+			Directory.CreateDirectory(Path.GetDirectoryName(this._path));
 			File.WriteAllText(this._path, token, ENCODER);
 		}
 
